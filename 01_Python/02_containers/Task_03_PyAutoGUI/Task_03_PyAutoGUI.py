@@ -1,4 +1,4 @@
-# This code is designed for macOS; please change the hotkeys for other operating systems.
+# This code is designed for Ubuntu; please change the hotkeys for other operating systems.
 
 import pyautogui
 import time
@@ -11,7 +11,7 @@ def clean_search_bar():
     try:
         wait_seconds(1)
         
-        pyautogui.hotkey('command', 'a', interval=0.1)
+        pyautogui.hotkey('ctrl', 'a', interval=0.1)
         wait_seconds(1)
 
         pyautogui.press('backspace', interval=0.1)
@@ -25,7 +25,7 @@ def open_vscode():
 
         wait_seconds(1)
 
-        pyautogui.hotkey('command', 'space', interval=0.1)
+        pyautogui.hotkey('win', interval=0.1)
         wait_seconds(1)
 
         clean_search_bar()
@@ -43,7 +43,7 @@ def open_extensions_sildbar():
     try:
         wait_seconds(1)
 
-        pyautogui.hotkey('command', 'shift', 'x', interval=0.1)
+        pyautogui.hotkey('ctrl', 'shift', 'x', interval=0.1)
         wait_seconds(1)
 
         clean_search_bar()
@@ -62,13 +62,13 @@ def search_extension(extension_name=''):
         pyautogui.press('enter', interval=0.1)
         wait_seconds(1)
 
-        pyautogui.hotkey('command', 'down')
+        pyautogui.hotkey('ctrl', 'down')
         wait_seconds(1)
 
         pyautogui.press('enter')
         wait_seconds(1)
 
-        pyautogui.hotkey('command', 'b')
+        pyautogui.hotkey('ctrl', 'b')
         wait_seconds(1)
     except Exception as e:
         print(f"Error Searching Extension {extension_name}: {e}")
@@ -77,11 +77,11 @@ def search_extension(extension_name=''):
 def is_it_instelled(extension_name=''):
         try:
             wait_seconds(1)
-            uninstall_coord = pyautogui.locateCenterOnScreen(image='/Users/zaidabdulmohsin/Desktop/EL2024/01_Python/02_containers/Task_03_PyAutoGUI/uninstall.png', grayscale=False, confidence=0.9 )
+            uninstall_coord = pyautogui.locateCenterOnScreen(image='/home/zaidabdulmohsin/Desktop/EL2024/01_Python/02_containers/Task_03_PyAutoGUI/uninstall.png', grayscale=False, confidence=0.9 )
             wait_seconds(2)
             if uninstall_coord is not pyautogui.ImageNotFoundException:
                 print(f'The Extenesion {extension_name} is installed!')
-                pyautogui.hotkey('command', 'w', interval=0.1)
+                pyautogui.hotkey('ctrl', 'w', interval=0.1)
                 return False
         except pyautogui.ImageNotFoundException:
             return True
@@ -89,7 +89,7 @@ def is_it_instelled(extension_name=''):
 def install_extension(extension_name=''):
     try:
         wait_seconds(1)
-        install_coord = pyautogui.locateCenterOnScreen(image='/Users/zaidabdulmohsin/Desktop/EL2024/01_Python/02_containers/Task_03_PyAutoGUI/install.png', grayscale=False, confidence=0.9 )
+        install_coord = pyautogui.locateCenterOnScreen(image='/home/zaidabdulmohsin/Desktop/EL2024/01_Python/02_containers/Task_03_PyAutoGUI/install.png', grayscale=False, confidence=0.9 )
         wait_seconds(2)
         
         if install_coord is not pyautogui.ImageNotFoundException:
@@ -97,15 +97,15 @@ def install_extension(extension_name=''):
             pyautogui.click(install_coord, button='left', duration=1)
             print(True)
             wait_seconds(1)
-            pyautogui.hotkey('command', 'w', interval=0.1)
+            pyautogui.hotkey('ctrl', 'w', interval=0.1)
 
     except pyautogui.ImageNotFoundException as e:
         print(f'Image not found for extension {extension_name}: {e}')
-        pyautogui.hotkey('command', 'w', interval=0.1)
+        pyautogui.hotkey('ctrl', 'w', interval=0.1)
     
     except Exception as e:
         print(f'Error Installing extenesion {extension_name}: {e}')
-        pyautogui.hotkey('command', 'w', interval=0.1)
+        pyautogui.hotkey('ctrl', 'w', interval=0.1)
 
 #-------------------------------------------------------
 def entering_extension_names():
@@ -126,7 +126,7 @@ def close_vscode():
         wait_seconds(1)
         print("Thank you for your patience. Good Bye!")
         wait_seconds(1)
-        pyautogui.hotkey('command', 'q', interval=0.1)
+        pyautogui.hotkey('ctrl', 'q', interval=0.1)
         wait_seconds(1)
     except Exception as e:
         print(f'Error Closing VSCode: {e}')
