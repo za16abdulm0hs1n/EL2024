@@ -1,0 +1,9 @@
+
+    // Initialization function for GPIO Port A
+    void GPIO_Init(void) {
+        // Set data direction register for Port A
+        DDRA = ob00111111;
+        //Initialize port values (all set to low)
+        PORTA = 0x00;
+    }
+    

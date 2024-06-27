@@ -2,7 +2,7 @@
 
 import pyautogui
 import time
-import os
+
 def wait_seconds(seconds = 1):
     time.sleep(seconds)
 
