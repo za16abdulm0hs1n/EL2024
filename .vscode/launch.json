@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/zaidabdulmohsin/Desktop/EL2024/02_C++/01_Introduction",
+      "program": "/Users/zaidabdulmohsin/Desktop/EL2024/02_C++/01_Introduction/build/Debug/outDebug"
+    }
+  ]
+}
